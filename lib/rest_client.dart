@@ -25,9 +25,9 @@ class Pokemon {
 
 @JsonSerializable()
 class PokemonImageUrl {
-  String? frontDefault;
+  String? front_default;
 
-  PokemonImageUrl({this.frontDefault});
+  PokemonImageUrl({this.front_default});
 
   factory PokemonImageUrl.fromJson(Map<String, dynamic> json) =>
       _$PokemonImageUrlFromJson(json);

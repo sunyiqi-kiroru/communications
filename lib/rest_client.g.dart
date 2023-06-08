@@ -18,12 +18,12 @@ Map<String, dynamic> _$PokemonToJson(Pokemon instance) => <String, dynamic>{
 
 PokemonImageUrl _$PokemonImageUrlFromJson(Map<String, dynamic> json) =>
     PokemonImageUrl(
-      frontDefault: json['frontDefault'] as String?,
+      front_default: json['front_default'] as String?,
     );
 
 Map<String, dynamic> _$PokemonImageUrlToJson(PokemonImageUrl instance) =>
     <String, dynamic>{
-      'frontDefault': instance.frontDefault,
+      'front_default': instance.front_default,
     };
 
 // **************************************************************************

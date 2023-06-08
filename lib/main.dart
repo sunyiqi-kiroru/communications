@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'ポケんモン図鑑'),
+      home: MyHomePage(title: 'ポケモン図鑑'),
     );
   }
 }
@@ -77,7 +77,8 @@ class _MyHomePageState extends State<MyHomePage> {
       final client = RestClient(dio);
 
       client.getPokemon(index.toString()).then((pokemon) => setState(() {
-            String url = pokemon.sprites?.frontDefault ?? '';
+            String url = pokemon.sprites?.front_default ?? '';
+
             imageUrls.add(url);
           }));
     }
