@@ -6,11 +6,9 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Dio + Retrofit
+（一応表示できるようになったが、なぜか順番が違うきが...）
+<img width="491" alt="スクリーンショット 2023-06-08 17 58 25" src="https://github.com/sunyiqi-kiroru/communications/assets/62870560/b1fd84a8-131f-404d-8456-7c3a9c98c9a0">
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Freezed
+<img width="494" alt="スクリーンショット 2023-06-08 18 00 32" src="https://github.com/sunyiqi-kiroru/communications/assets/62870560/f110821e-fa91-4f72-8cac-5af16a753f0b">
