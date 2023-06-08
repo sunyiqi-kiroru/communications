@@ -1,8 +1,7 @@
-import 'package:communications/model/pokemon_model.dart';
 import 'dart:convert';
-import 'package:http/http.dart' as http;
-import '/model/pokemon_model.dart';
 import 'package:flutter/material.dart';
+import 'package:communications/rest_client.dart';
+import 'package:dio/dio.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 const maxNumber = 385;
@@ -74,21 +73,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<void> fetchImageUrls() async {
     for (int index = 1; index <= maxNumber; index++) {
-      Uri url = Uri.parse('http://pokeapi.co/api/v2/pokemon/$index/');
-      final response = await http.get(url);
-      if (response.statusCode == 200) {
-        var jsonResponse = json.decode(response.body);
-        // ライブラリ使わず
-        // final imageUrl = jsonResponse['sprites']['front_default'];
-        // モデルへ変換
-        final imageUrl =
-            PokemonModel.fromJson(jsonResponse).sprites.front_default;
-        setState(() {
-          imageUrls.add(imageUrl);
-        });
-      } else {
-        throw Exception('Failed to fetch image URL');
-      }
+      final dio = Dio();
+      final client = RestClient(dio);
+
+      client.getPokemon(index.toString()).then((pokemon) => setState(() {
+            String url = pokemon.sprites?.frontDefault ?? '';
+            imageUrls.add(url);
+          }));
     }
   }
 }
